@@ -21,15 +21,15 @@
             <div class="top-nav container">
                 <div class="logo">Pagina Ecommerce</div>
                 <ul>
-                    <li><a href="#">Tienda</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Carrito</a></li>
+                    <li><a href="{{ url('/shop') }}">Tienda |</a></li>
+                    <li><a href="#">Nosotros |</a></li>
+                    <li><a href="#">Blog |</a></li>
+                    <li><a href="{{ url('/cart') }}">Carrito</a></li>
                 </ul>
             </div> <!-- end top-nav -->
             <div class="hero container">
                 <div class="hero-copy">
-                    <h1>Pagina Ecommerce Prueba</h1>
+                    <h1>Pagina Ecommerce DH Grupo II</h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda nulla aspernatur aliquid!</p>
                     <div class="hero-buttons">
                         <a href="#" class="button button-white">Botón1</a>
@@ -38,7 +38,7 @@
                 </div> <!-- end hero-copy -->
 
                 <div class="hero-image">
-                    <img src="/img/hero-image.png" alt="hero image">
+                    {{-- <img src="/img/hero-image.png" alt="hero image"> --}}
                 </div> <!-- end hero-image -->
             </div> <!-- end hero -->
         </header>
@@ -65,50 +65,17 @@
                 </div> --}}
 
                 <div class="products text-center">
-                    <div class="product">
-                        <a href="#"><img src="/img/product-image.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Villa la Angostura</div></a>
-                        <div class="product-price">$7499.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="/img/product-image.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Villa la Angostura</div></a>
-                        <div class="product-price">$7499.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="/img/product-image.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Villa la Angostura</div></a>
-                        <div class="product-price">$7499.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="/img/product-image.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Villa la Angostura</div></a>
-                        <div class="product-price">$7499.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="/img/product-image.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Villa la Angostura</div></a>
-                        <div class="product-price">$7499.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="/img/product-image.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Villa la Angostura</div></a>
-                        <div class="product-price">$7499.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="/img/product-image.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Villa la Angostura</div></a>
-                        <div class="product-price">$7499.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="/img/product-image.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Villa la Angostura</div></a>
-                        <div class="product-price">$7499.99</div>
-                    </div>
+                    @foreach ($products as $product)
+                        <div class="product">
+                            <a href="{{ route('shop.show',$product->slug)}}"><img src="/img/{{$product->slug}}.jpg" alt="product"></a>
+                            <a href="{{ route('shop.show',$product->slug)}}"><div class="product-name">{{$product->name}}</div></a>
+                            <div class="product-price">{{$product->presentPrice()}}</div>
+                        </div>
+                    @endforeach
                 </div> <!-- end products -->
 
                 <div class="text-center button-container">
-                    <a href="#" class="button">Ver más ofertas</a>
+                    <a href="{{ url('/shop') }}" class="button">Ver más ofertas</a>
                 </div>
 
             </div> <!-- end container -->

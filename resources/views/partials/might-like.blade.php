@@ -1,6 +1,6 @@
 <div class="might-like-section">
     <div class="container">
-        <h2>Podría interesarle...</h2>
+        <h2>También Podría interesarte</h2>
         <div class="might-like-grid">
             <a href="#" class="might-like-product">
                 <img src="{{ asset('img/product-image.jpg') }}" alt="product">

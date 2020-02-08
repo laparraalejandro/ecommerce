@@ -77,7 +77,7 @@
 
                     <div class="spacer"></div>
 
-                    <input type="submit" class="button-primary full-width" value="Complete Order">
+                    <input type="submit" class="button-primary full-width" value="Completar Pedido">
 
 
                 </form>
@@ -159,7 +159,7 @@
                 <div class="have-code-container">
                     <form action="#">
                         <input type="text">
-                        <input type="submit" class="button" value="Apply">
+                        <input type="submit" class="button" value="Aplicar">
                     </form>
                 </div>
             </div>

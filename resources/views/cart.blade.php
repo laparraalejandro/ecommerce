@@ -10,7 +10,7 @@
 
     <div class="breadcrumbs">
         <div class="container">
-            <a href="#">Home</a>
+            <a href="{{ url('/') }}">Home</a>
             <i class="fa fa-chevron-right breadcrumb-separator"></i>
             <span>Carrito de Compras</span>
         </div>
@@ -121,8 +121,8 @@
             </div> <!-- end cart-totals -->
 
             <div class="cart-buttons">
-                <a href="#" class="button">Seguir Comprando</a>
-                <a href="#" class="button-primary">Ir al Checkout</a>
+                <a href="{{ url('/products') }}" class="button">Seguir Comprando</a>
+                <a href="{{ url('/checkout') }}" class="button-primary">Ir al Checkout</a>
             </div>
 
             <h2>2 items Guardados para Después</h2>

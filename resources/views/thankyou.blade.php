@@ -15,7 +15,7 @@
        <p>Se ha enviado un mail de confirmación</p>
        <div class="spacer"></div>
        <div>
-           <a href="{{ url('/') }}" class="button">Home</a>
+           <a href="#" class="button">Home</a>
        </div>
    </div>
 
