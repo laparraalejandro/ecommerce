@@ -24,7 +24,7 @@
                     <li><a href="{{ url('/shop') }}">Tienda |</a></li>
                     <li><a href="#">Nosotros |</a></li>
                     <li><a href="#">Blog |</a></li>
-                    <li><a href="{{ url('/cart') }}">Carrito</a></li>
+                    <li><a href="{{ route('cart.index') }}">Carrito <span class="cart-count"><span> {{Cart::instance('default')->count()}}</span></span></a></li>
                 </ul>
             </div> <!-- end top-nav -->
             <div class="hero container">

@@ -1,4 +1,33 @@
 form {
+
+
+  .cart-options {
+    border:none;
+    color: lighten($text-color, 10%);
+    background: transparent;
+    font-size: 14px;
+    font-weight: 200;
+    padding: 0;
+
+    &:hover {
+        color: lighten($text-color, 40%);
+    }
+}
+
+  .button-form{
+    border: 1px solid $text-color;
+    padding: 12px 40px;
+    font-size: $h2-font-size*0.80;
+    color:$text-color-light;
+    background-color: $white; 
+
+    &:hover {
+        color: $white;
+        background: $text-color;
+    }
+  }
+
+
   .half-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -8,8 +37,13 @@ form {
   input[type="submit"] {
     border-style: none;
     cursor: pointer;
-    font-size: 18px;
+    font-size: $h1-font-size; 
     line-height: 1.6;
+
+    &:hover {
+        color: $white;
+        background: $text-color;
+    }
   }
 }
 

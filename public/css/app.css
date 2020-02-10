@@ -252,6 +252,25 @@ h2 {
   width: 100%;
 }
 
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
 .breadcrumbs {
   background: #F5F5F5;
   border-bottom: 1px solid #CDCDCD;
@@ -330,16 +349,45 @@ h2 {
 .might-like-section .might-like-product {
   border: 1px solid #979797;
   background: white;
-  padding: 30px 0 20px;
+  padding: 20px 0 20px;
   text-align: center;
 }
 
 .might-like-section .might-like-product img {
-  width: 70%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 80%;
+  height: 125px;
 }
 
 .might-like-section .might-like-product-price {
   color: #919191;
+}
+
+form .cart-options {
+  border: none;
+  color: #3b3b3b;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 200;
+  padding: 0;
+}
+
+form .cart-options:hover {
+  color: #878787;
+}
+
+form .button-form {
+  border: 1px solid #212121;
+  padding: 12px 40px;
+  font-size: 17.6px;
+  color: #919191;
+  background-color: #FFF;
+}
+
+form .button-form:hover {
+  color: #FFF;
+  background: #212121;
 }
 
 form .half-form {
@@ -351,8 +399,13 @@ form .half-form {
 form input[type=submit] {
   border-style: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 38px;
   line-height: 1.6;
+}
+
+form input[type=submit]:hover {
+  color: #FFF;
+  background: #212121;
 }
 
 .form-group {
@@ -468,6 +521,23 @@ header .top-nav ul a {
 
 header .top-nav ul a:hover {
   color: #e6e6e6;
+}
+
+header .top-nav ul .cart-count {
+  display: inline-block;
+  background: #FFD94D;
+  color: #212121 !important;
+  line-height: 0;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+header .top-nav ul .cart-count span {
+  display: inline-block;
+  padding-top: 50%;
+  padding-bottom: 50%;
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
 footer {
@@ -612,7 +682,7 @@ footer {
 
 .cart-section {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
   grid-gap: 30px;
   margin: 60px auto;
 }
@@ -647,12 +717,16 @@ footer {
 }
 
 .cart-section .cart-table-row .cart-table-row-right {
-  width: 33%;
+  width: 35%;
   padding-top: 10px;
 }
 
 .cart-section .cart-table-row .cart-table-img {
-  max-height: 75px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 80%;
+  height: 115px;
+  max-width: 400px;
 }
 
 .cart-section .cart-table-row .cart-table-actions {

@@ -1,6 +1,6 @@
 .cart-section {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-gap: 30px;
     margin: 60px auto;
 
@@ -32,12 +32,17 @@
         }
 
         .cart-table-row-right {
-            width: 33%;
+            width: 35%;
             padding-top: 10px;
         }
 
         .cart-table-img {
-            max-height: 75px;
+            
+            object-fit: cover;
+            width: 80%;
+            height: 115px;
+            max-width: 400px;
+
         }
 
         .cart-table-actions {
