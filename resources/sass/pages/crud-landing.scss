@@ -1,0 +1,102 @@
+.crudland-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    margin: 60px auto;
+
+    h2 {
+        margin-bottom: 30px;
+    }
+
+    
+    .crudland-table {
+
+    }
+
+    .crudland-table-row {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid $text-color-light;
+        padding: 14px 0;
+
+        &:last-child {
+            border-bottom: 1px solid $text-color-light;
+        }
+
+        .crudland-table-row-left, .cart-table-row-right, .crudland-table-row-center {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .crudland-table-row-left {
+            width: 40%;
+        }
+
+        .crudland-table-row-center{
+            padding-top: 30px;
+            width: 20%;
+            padding-left: 100px;
+        }
+
+        .crudland-table-row-right {
+            width: 40%;
+            padding-top: 10px;
+        }
+
+
+        .crudland-table-img {
+            object-fit: cover;
+            width: 80%;
+            height: 115px;
+            max-width: 350px;
+        }
+
+        .crudland-table-actions {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .crudland-item-details {
+            padding-top: 5px;
+        }
+
+        .crudland-table-description {
+            color: $text-color-light;
+        }
+    }
+
+    .crudland-totals {
+        margin: 30px 0;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        background: $light-gray-background;
+
+        .crudland-totals-left {
+            width: 50%;
+        }
+
+        .crudland-totals-right {
+            display: flex;
+            justify-content: space-between;
+            width: 25%;
+            text-align: right;
+        }
+
+        .crudland-totals-total {
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 2;
+        }
+    }
+
+    .crudland-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+    }
+
+}
+
+
+

@@ -15,7 +15,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        $mightAlsoLike = Product::mightAlsoLike()->get();
+        $mightAlsoLike = Product::where('active','!=','0')->mightAlsoLike()->get();
         return view('cart')->with('mightAlsoLike', $mightAlsoLike);
     }
 

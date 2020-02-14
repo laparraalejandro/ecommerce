@@ -14,7 +14,7 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $products = Product::inRandomOrder()->take(9)->get();
+        $products = Product::where('active','!=','0')->inRandomOrder()->take(9)->get();
         
         return view('shop')->with('products',$products);
     }
@@ -28,7 +28,7 @@ class ShopController extends Controller
     public function show($slug)
     {
         $product = Product::where('slug',$slug)->firstOrFail();
-        $mightAlsoLike = Product::where('slug','!=',$slug)->mightAlsoLike()->get();
+        $mightAlsoLike = Product::where('slug','!=',$slug)->where('active','!=','0')->mightAlsoLike()->get();
 
         return view('product')->with([
                 'product'=> $product,

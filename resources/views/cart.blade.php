@@ -107,7 +107,7 @@
 
                 <div class="cart-buttons">
                     <a href="{{route('shop.index')}}" class="button">Seguir Comprando</a>
-                    <a href="{{ url('/checkout') }}" class="button-primary">Ir al Checkout</a>
+                    <a href="{{route('checkout.index')}}" class="button-primary">Ir al Checkout</a>
                 </div>
 
             @else

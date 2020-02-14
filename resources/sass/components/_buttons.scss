@@ -8,6 +8,19 @@
     }
 }
 
+.button-crudland {
+    width: 120px;
+    border: 1px solid $text-color;
+    padding: 12px 40px;
+    margin: 2px;
+    font-size: $body-font-size;
+
+    &:hover {
+        color: $white;
+        background: $text-color;
+    }
+}
+
 .button-white {
     border: 1px solid $white;
     color: $white !important;

@@ -4,6 +4,8 @@
 
 @section('extra-css')
 
+    <script src="https://js.stripe.com/v3/"></script>
+
 @endsection
 
 @section('content')
@@ -89,72 +91,44 @@
                 <h2>Su Pedido</h2>
 
                 <div class="checkout-table">
-                    <div class="checkout-table-row">
-                        <div class="checkout-table-row-left">
-                            <img src="/img/product-image.jpg" alt="item" class="checkout-table-img">
-                            <div class="checkout-item-details">
-                                <div class="checkout-table-item">Villa la Angostura</div>
-                                <div class="checkout-table-description">6 dias, 7 noches All inclusive</div>
-                                <div class="checkout-table-price">$7499.99</div>
+
+                    @foreach (Cart::content() as $item)
+                        <div class="checkout-table-row">
+                            <div class="checkout-table-row-left">
+                                <img src="{{asset('/img/'.$item->model->slug.'.jpg')}}" alt="item" class="checkout-table-img">
+                                <div class="checkout-item-details">
+                                    <div class="checkout-table-item">{{$item->model->name}}</div>
+                                    <div class="checkout-table-description">{{$item->model->details}}</div>
+                                    <div class="checkout-table-price">{{$item->model->presentPrice()}}</div>
+                                </div>
+                            </div> <!-- end checkout-table -->
+
+                            <div class="checkout-table-row-right">
+                                <div class="checkout-table-quantity">{{$item->qty}}</div>
                             </div>
-                        </div> <!-- end checkout-table -->
-
-                        <div class="checkout-table-row-right">
-                            <div class="checkout-table-quantity">1</div>
-                        </div>
-                    </div> <!-- end checkout-table-row -->
-
-                    <div class="checkout-table-row">
-                        <div class="checkout-table-row-left">
-                            <img src="/img/product-image.jpg" alt="item" class="checkout-table-img">
-                            <div class="checkout-item-details">
-                                <div class="checkout-table-item">Villa la Angostura</div>
-                                <div class="checkout-table-description">6 dias, 7 noches All inclusive</div>
-                                <div class="checkout-table-price">$7499.99</div>
-                            </div>
-                        </div> <!-- end checkout-table -->
-
-                        <div class="checkout-table-row-right">
-                            <div class="checkout-table-quantity">1</div>
-                        </div>
-                    </div> <!-- end checkout-table-row -->
-
-                    <div class="checkout-table-row">
-                        <div class="checkout-table-row-left">
-                            <img src="/img/product-image.jpg" alt="item" class="checkout-table-img">
-                            <div class="checkout-item-details">
-                                <div class="checkout-table-item">Villa la Angostura</div>
-                                <div class="checkout-table-description">6 dias, 7 noches All inclusive</div>
-                                <div class="checkout-table-price">$7499.99</div>
-                            </div>
-                        </div> <!-- end checkout-table -->
-
-                        <div class="checkout-table-row-right">
-                            <div class="checkout-table-quantity">1</div>
-                        </div>
-                    </div> <!-- end checkout-table-row -->
-
+                        </div> <!-- end checkout-table-row -->
+                    @endforeach
                 </div> <!-- end checkout-table -->
 
                 <div class="checkout-totals">
                     <div class="checkout-totals-left">
                         Subtotal <br>
-                        Descuento (10OFF - 10%) <br>
-                        Impuesto <br>
+                        {{-- Descuento (10OFF - 10%) <br> --}}
+                        Impuesto (21%) <br>
                         <span class="checkout-totals-total">Total</span>
 
                     </div>
 
                     <div class="checkout-totals-right">
-                        $7499.97 <br>
-                        -$750.00 <br>
-                        $975.00 <br>
-                        <span class="checkout-totals-total">$8474.97</span>
+                        {{presentPrice(Cart::subtotal())}} <br>
+                        {{-- -$750.00 <br> --}}
+                        {{presentPrice(Cart::tax())}} <br>
+                        <span class="checkout-totals-total">{{presentPrice(Cart::total())}}</span>
 
                     </div>
                 </div> <!-- end checkout-totals -->
 
-                <a href="#" class="have-code">Tienes Cupón?</a>
+                <p href="#" class="have-code">Tienes Cupón?</p>
 
                 <div class="have-code-container">
                     <form action="#">

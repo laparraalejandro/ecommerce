@@ -24,7 +24,7 @@
                     <li><a href="{{ url('/shop') }}">Tienda |</a></li>
                     <li><a href="#">Nosotros |</a></li>
                     <li><a href="#">Blog |</a></li>
-                    <li><a href="{{ route('cart.index') }}">Carrito <span class="cart-count"><span> {{Cart::instance('default')->count()}}</span></span></a></li>
+                    <li><a href="{{ route('cart.index') }}">Carrito @if((Cart::instance('default')->count())>0)<span class="cart-count"><span> {{Cart::instance('default')->count()}}</span></span> @endif </a></li>
                 </ul>
             </div> <!-- end top-nav -->
             <div class="hero container">
@@ -32,7 +32,7 @@
                     <h1>Pagina Ecommerce DH Grupo II</h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda nulla aspernatur aliquid!</p>
                     <div class="hero-buttons">
-                        <a href="#" class="button button-white">Botón1</a>
+                        <a href="{{route('crud-landing.index')}}" class="button button-white">Login</a>
                         <a href="#" class="button button-white">Botón2</a>
                     </div>
                 </div> <!-- end hero-copy -->

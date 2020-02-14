@@ -20,7 +20,10 @@ class CreateProductsTable extends Migration
             $table->string('details')->nullable();
             $table->integer('price');
             $table->text('description');
+            $table->integer('user_id');
+            $table->integer('active');
             $table->timestamps();
+            
         });
     }
 
