@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 
-class CrudLandingController extends Controller
+
+class ProductManagerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +15,13 @@ class CrudLandingController extends Controller
      */
     public function index()
     {
-        $products = Product::where('active','!=','0')->paginate(10);
-        $allProducts =Product::where('active','!=','0')->get();
+        $products = Product::paginate(10);
+        $allProducts =Product::all();
+   
 
         //$products = DB::table('product')->paginate(15);
 
-        return view('crud-landing')->with([
+        return view('crud/product-manager')->with([
             'products'=>$products,
             'allProducts'=>$allProducts,
         ]);
@@ -32,8 +34,24 @@ class CrudLandingController extends Controller
      */
     public function create()
     {
-        
+
     }
+
+        /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function visible(Request $req)
+    {
+        $product = Product::find($req['id']);
+
+        $product->active = (!($product->active));
+        $product->save();
+
+        return redirect('/crud/product-manager');
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -88,6 +106,8 @@ class CrudLandingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product=Product::where('id',$id)->delete();
+
+        return back()->with('success_message','Se ha eliminado el producto!');
     }
 }

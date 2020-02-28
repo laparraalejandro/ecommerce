@@ -32,13 +32,13 @@
                     <h1>Pagina Ecommerce DH Grupo II</h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda nulla aspernatur aliquid!</p>
                     <div class="hero-buttons">
-                        <a href="{{route('crud-landing.index')}}" class="button button-white">Login</a>
-                        <a href="#" class="button button-white">Botón2</a>
+                        <a href="{{route('product-manager.index')}}" class="button button-white">Login</a>
+                        <a href="#" class="button button-white">Sing in</a>
                     </div>
                 </div> <!-- end hero-copy -->
 
                 <div class="hero-image">
-                    {{-- <img src="/img/hero-image.png" alt="hero image"> --}}
+                    {{-- <img src="{{ asset('/storage/storage/page-img/hero-background-img.jpg') }}" alt="hero image"> --}}
                 </div> <!-- end hero-image -->
             </div> <!-- end hero -->
         </header>
@@ -67,8 +67,8 @@
                 <div class="products text-center">
                     @foreach ($products as $product)
                         <div class="product">
-                            <a href="{{ route('shop.show',$product->slug)}}"><img src="/img/{{$product->slug}}.jpg" alt="product"></a>
-                            <a href="{{ route('shop.show',$product->slug)}}"><div class="product-name">{{$product->name}}</div></a>
+                            <a href="{{ route('shop.show',$product->id)}}"><img src="{{ asset('/storage/storage/product-img/'.$product->image) }}" alt="product"></a>
+                            <a href="{{ route('shop.show',$product->id)}}"><div class="product-name">{{$product->name}}</div></a>
                             <div class="product-price">{{$product->presentPrice()}}</div>
                         </div>
                     @endforeach
@@ -90,17 +90,17 @@
 
                 <div class="blog-posts">
                     <div class="blog-post" id="blog1">
-                        <a href="#"><img src="/img/blog1.jpg" alt="Blog Image"></a>
+                        <a href="#"><img src="{{ asset('/storage/storage/product-img/blog1.jpg')}}"  alt="Blog Image"></a>
                         <a href="#"><h2 class="blog-title">Blog Post 1</h2></a>
                         <div class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, tenetur numquam ipsam reiciendis.</div>
                     </div>
                     <div class="blog-post" id="blog2">
-                        <a href="#"><img src="/img/blog2.jpg" alt="Blog Image"></a>
+                        <a href="#"><img src="{{ asset('/storage/storage/product-img/blog2.jpg')}}" alt="Blog Image"></a>
                         <a href="#"><h2 class="blog-title">Blog Post 2</h2></a>
                         <div class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, tenetur numquam ipsam reiciendis.</div>
                     </div>
                     <div class="blog-post" id="blog3">
-                        <a href="#"><img src="/img/blog3.jpg" alt="Blog Image"></a>
+                        <a href="#"><img src="{{ asset('/storage/storage/product-img/blog3.jpg')}}" alt="Blog Image"></a>
                         <a href="#"><h2 class="blog-title">Blog Post 3</h2></a>
                         <div class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, tenetur numquam ipsam reiciendis.</div>
                     </div>

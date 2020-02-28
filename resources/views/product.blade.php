@@ -20,15 +20,16 @@
 
     <div class="product-section container">
         <div class="product-section-image">
-            <img src="/img/{{$product->slug}}.jpg" alt="product">
+            <img src="{{ asset('/storage/storage/product-img/'.$product->image)}}" alt="product">
         </div>
         <div class="product-section-information">
             <h1 class="product-section-title">{{$product->name}}</h1>
+            <br>
             <div class="product-section-subtitle">{{$product->details}}</div>
             <div class="product-section-price">{{$product->presentPrice()}}</div>     
 
             <p>{{$product->description}}</p>
-
+ 
             <p>&nbsp;</p>
 
             {{-- <a href="{{ url('/cart') }}" class="button">Añadir al Carrito</a> --}}

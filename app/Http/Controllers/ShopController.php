@@ -14,21 +14,25 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $products = Product::where('active','!=','0')->inRandomOrder()->take(9)->get();
+        //$products = Product::where('active','!=','0')->inRandomOrder()->paginate(9);
+
+        $products = Product::where('active','!=','0')->paginate(9);
         
         return view('shop')->with('products',$products);
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  string  $slug
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $product = Product::where('slug',$slug)->firstOrFail();
-        $mightAlsoLike = Product::where('slug','!=',$slug)->where('active','!=','0')->mightAlsoLike()->get();
+        // $product = Product::where('id',$id)->firstOrFail();
+        $product = Product::where('id',$id)->firstOrFail();
+        $mightAlsoLike = Product::where('id','!=',$id)->where('active','!=','0')->mightAlsoLike()->get();
 
         return view('product')->with([
                 'product'=> $product,

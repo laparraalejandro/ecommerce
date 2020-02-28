@@ -4,8 +4,72 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f7522af56f79a66eb6bc0339da1f3c6",
+    "content-hash": "040f5f7868830335b4e8a016b6cf8aea",
     "packages": [
+        {
+            "name": "andrechalom/laravel-multiselect",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andrechalom/laravel-multiselect.git",
+                "reference": "890a111fcc1202abcfaba3c89091a9d18731617f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andrechalom/laravel-multiselect/zipball/890a111fcc1202abcfaba3c89091a9d18731617f",
+                "reference": "890a111fcc1202abcfaba3c89091a9d18731617f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^5.1",
+                "illuminate/support": "^5.1",
+                "php": "^5.6|^7.0"
+            },
+            "require-dev": {
+                "phpunit/php-code-coverage": ">=4.0",
+                "phpunit/phpunit": ">=5.4.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "AndreChalom\\LaravelMultiselect\\MultiselectServiceProvider"
+                    ],
+                    "aliases": {
+                        "Multiselect": "AndreChalom\\LaravelMultiselect\\MultiselectFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "AndreChalom\\LaravelMultiselect\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv3"
+            ],
+            "authors": [
+                {
+                    "name": "Andre Chalom",
+                    "email": "andrechalom@gmail.com",
+                    "homepage": "https://github.com/andrechalom",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A small package for creating html select elements with multiple selections",
+            "homepage": "https://github.com/andrechalom/laravel-multiselect",
+            "keywords": [
+                "form",
+                "laravel",
+                "multiple",
+                "select"
+            ],
+            "time": "2017-11-28T20:43:55+00:00"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "v0.1.1",

@@ -42,15 +42,25 @@
 
                 @foreach ($products as $product)
                     <div class="product">
-                        <a href="{{ route('shop.show',$product->slug)}}"><img src="/img/{{$product->slug}}.jpg" alt="product"></a>
-                        <a href="{{ route('shop.show',$product->slug)}}"><div class="product-name">{{$product->name}}</div></a>
+                        <a href="{{ route('shop.show',$product->id)}}"><img src="{{ asset('/storage/storage/product-img/'.$product->image) }}" alt="product"></a>
+                        <a href="{{ route('shop.show',$product->id)}}"><div class="product-name">{{$product->name}}</div></a>
                         <div class="product-price">{{$product->presentPrice()}}</div>
                     </div>
                 @endforeach
 
             </div> <!-- end products -->
+
+            <!-- enable pagination with own styles-->
+            <div class="spacer"></div>
+            <div>
+                {{ $products->links('vendor.pagination.bootstrap-4') }}
+            </div>
+            
         </div>
     </div>
 
+
+
+ 
 
 @endsection
